@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.alert{
+    color: red;
+    background-color: rgba(216, 151, 151, 0.537);
+    width: 70%;
+    margin: 10px auto;
+    border: 1px solid red;
+}
+.head-bar{
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.547);
+    height: 45px;
+
+
+
+}
+.pswrd-dnt-mtch{
+    display: none;
+}
+
+.head-bar ul{
+    display: flex;
+    display: flex;
+    /* justify-content: space-around; */
+    float: right;
+}
+.bars{
+    margin: 10px 5px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+.header-label{
+    padding: 15px 10px ;
+    color: #ffff;
+    font-size: 25px;
+    margin:  20px;
+}
+.bars:hover a{
+    color: blue;
+
+    transition-duration: .2s;
+}
+.bars a{
+    padding: 10px 10px;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+}
+body{
+    background: linear-gradient(90deg, rgba(247,2,201,1) 0%, rgba(52,94,237,1) 100%);
+    background-size:auto;
+    /* background-repeat: no-repeat; */
+}
+.login-form-center{
+    width: 350px;
+    transition-duration: .4s;
+    transition-delay: .2s;
+    text-align: center;
+    /* width: fit-content; */
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(236, 236, 236, 0.484);
+    margin: 100px auto;
+    display: none;
+}
+.register-form-center{
+    width: 350px;
+    /* display: none; */
+    text-align: center;
+    /* width: fit-content; */
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(236, 236, 236, 0.484);
+    margin: 100px auto;
+}
+h3 {
+    color: #ffff;
+    padding: 10px 0;
+}
+.input-contents{
+    margin: 10px 0;
+}
+.input-contents input{
+    border: 0px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 25px;
+}
+.input-contents input:focus{
+    border: 0px solid ;
+    outline: 0px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    transition-duration: .2s;
+    transition-delay: .1s;
+}
+.enter-button{
+    margin: 20px 0;
+}
+
+.enter-button button{
+    border: 0px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.enter-button button:hover{
+    background-color: rgb(212, 212, 212);
+    transition-duration: .2s;
+    transition-delay: .1s;
+    border: 0px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.signup-span{
+    color: rgb(236, 60, 60);
+    cursor: pointer;
+}
+.signup-span:hover{
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    /* transition-duration: .2s; */
+}
+.show{
+    display: block;
+}
+table{
+    background-color: aliceblue;
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid  black;
+}
+thead  {
+
+    border: 1px black;
+    width: fit-content;
+    padding: 10px;
+}
+table th{
+    border-right: 1px black solid;
+}
+table td{
+    text-align: center;
+    border-bottom: 1px solid rgb(108, 101, 101);
+
+    /* border-right: 1px rgb(206, 195, 195) solid; */
+
+}
+table tr{
+    height: 30px;
+    border-bottom: 1px solid black;
+}
+.buttons{
+    margin:10px 150px ;
+    padding: 10px;
+    display: inline-block;
+    float: right;
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	/* background:linear-gradient(to bottom, #89c403 5%, #77a809 100%); */
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+.button1{
+    background-color: #7ab024;
+}
+
+.button2{
+    background-color: #0000ff;
+}
+
+.button3{
+    background-color: #d01010;
+}
+.button1:hover{
+    background-color: #598218;
+}
+
+.button2:hover{
+    background-color: #0a0a8e;
+}
+
+.button3:hover{
+    background-color: #840d0d;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+
+<body>
+    <div class="head-bar">
+        <label class="header-label" >{{name}}</label>
+        <ul>
+            {{!-- <li class="bars"><a href="/home" >Home</a></li> --}}
+            <li class="bars"><a href="/login" >Logout</a></li>
+            {{!-- <li class="bars"><a href="/register" >Register</a></li> --}}
+        </ul>
+    </div>
+        <form action="/block" method="post">
+    <div class="buttons" >
+        <button class="myButton button1 " formmethod="post" formaction="/unblock" >Unblock</button>
+        <button class="myButton button2 " formmethod="post" formaction="/block" >Block</button >
+        <button class="myButton button3 " formmethod="post" formaction="/delete" >Delete</button>
+    </div>
+
+        <table>
+        <thead>
+            <th ><input  id="chckbxAll"  type="checkbox"></th>
+            <th  >id</th>
+            <th>Username</th>
+            <th>email</th>
+            <th>status</th>
+            <th>last login</th>
+            <th>registred</th>
+        </thead>
+        {{#each rows}}
+        <tr>
+            <td><input  class="select-options" name="{{this.email}}" id="{{this.email}}"   type="checkbox"></td>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.status}}</td>
+            <td>{{this.lastlog}}</td>
+            <td>{{this.register}}</td>
+        </tr>
+        {{/each }}
+
+        
+    </table>
+    </form>
+
+    <script >
+        const chckbxAll= document.querySelector("#chckbxAll")
+const chckbxOptions= document.querySelectorAll(".select-options");
+const unlockBtn = document.querySelector('.button1')
+const blockBtn = document.querySelector('.button2')
+const deleteBtn = document.querySelector('.button3')
+let checkedUsers = []
+
+const selectAllchckbxes = () => {
+    if (chckbxAll.checked){
+
+        chckbxOptions.forEach(chckOption => {
+            chckOption.checked = true;
+            
+        })
+    }
+    else{
+        chckbxOptions.forEach(chckOption => chckOption.checked = false)
+
+
+    }
+
+}
+
+
+chckbxAll.addEventListener("click",selectAllchckbxes)
+
+const unblockcheckBoxEd = () => {
+    
+}
+unlockBtn.addEventListener("click", async () => {
+    if(chckbxAll.checked){
+        chckbxOptions.forEach(chckOption =>{
+            chckOption.checked = true;
+            checkedUsers.push(chckOption.id)
+            
+    
+        });
+        console.log(checkedUsers)
+       
+        const req = await fetch("/unblock", {method: "POST",body: JSON.stringify(checkedUsers)}) ;
+        const res = await req.json();
+        console.log(res)
+      
+    }else{
+        chckbxOptions.forEach(chckOption => {
+            if(chckOption.checked){
+              
+
+            }
+        })
+    }
+})
+
+
+
+    </script>
+</body>
+</html>

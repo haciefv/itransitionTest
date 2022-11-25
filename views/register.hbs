@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="head-bar">
+        <label class="header-label" >Node.js/MySql</label>
+        <ul>
+            {{!-- <li class="bars"><a href="/home" >Home</a></li> --}}
+            <li class="bars"><a href="/login" >Login</a></li>
+            <li class="bars"><a href="/register" >Register</a></li>
+        </ul>
+    </div>
+        <div class="register-form-center">
+        <h3>Register</h3>
+        <form action="/auth/register" method="post">
+            <div class="input-contents">
+                <input type="text" name="regUname" id="regUname" placeholder="Username">
+
+            </div>
+            <div class="input-contents">
+                <input type="email" name="regUemail" id="regUemail" placeholder="Email">
+
+            </div>
+            <div class="input-contents">
+                <input type="password" name="regUpassword" id="regUpassword" placeholder="Password">
+                
+            </div>
+            <div class="input-contents">
+                <input type="password" name="regUpasswordConfirm"placeholder="Confirm password" >
+                
+            </div>
+            
+            <div class="enter-button">
+                <button>Register</button>
+            </div>
+
+                {{#if message}}
+                        <h4 class="alert alert-danger mt-4" >{{message}}</h4>
+                {{/if}}
+            <div class="center-footer">
+                <span>Have an account? <span class="signup-span shower" ><a href="/login" >Login</a></span></span>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
