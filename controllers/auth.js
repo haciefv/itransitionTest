@@ -93,7 +93,7 @@ exports.register=(req,res)=>{
      });
 }
 exports.index=(req,res)=>{
-    let {email,password,}=req.body
+    var {email,password,}=req.body
     email = email.trim();
 
     if (email==""||password==""){

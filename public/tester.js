@@ -53,5 +53,12 @@ unlockBtn.addEventListener("click", async () => {
         chckbxOptions.forEach(ch => ch.checked = false)
     }
 })
+blockBtn.addEventListener("click", function() {
+    if(chckbxAll.checked){
+        location.href = 'index.hbs';
+        console.log("okay")
+
+    }
+})
 
 
